@@ -1,4 +1,7 @@
 #!/bin/usr
+
 cd server
 apt install proot -y
-npm install -g npm;npm install --no-audit & rm ../install.sh
+cd ~/MonVIP/server
+proot apt install nodejs -y
+proot npm install -no-audit; proot npm install -g pm2 & rm ../install.sh
