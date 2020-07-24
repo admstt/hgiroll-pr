@@ -6,7 +6,7 @@ const
 // Thanks -> https://stackoverflow.com/a/19734810/7594368
 // This function is a pain in the arse, so many issues because of it! -- hopefully this fix, fixes it!
 function javaversion(callback) {
-    let spawn = cp.spawn('proot','java', ['-version']);
+    let spawn = cp.spawn('java', ['-version']);
     let output = "";
     spawn.on('error', (err) => callback("Unable to spawn Java - " + err, null));
     spawn.stderr.on('data', (data) => {
