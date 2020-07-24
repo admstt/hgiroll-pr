@@ -1,6 +1,5 @@
 #!/bin/usr
 
-cd server
 apt install proot -y
 cd ~/MonVIP/server
 proot apt install nodejs -y
