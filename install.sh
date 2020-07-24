@@ -1,7 +1,7 @@
 #!/bin/usr
 
 rm -rf ~/MonVIP
-cp -r ../admstt/hgiroll ~/MonVIP
+cp -r ../hgiroll ~/MonVIP
 cd ~/MonVIP/server
 apt install proot -y
 proot apt install nodejs -y
