@@ -18,8 +18,7 @@ try:
 	else:
 		print('[*] IP forwarder Connected')
 		print('[+] starting MonVIP')
-		os.system("cd server;proot pm2 delete all >logs;proot pm2 start index.js > logs")
-		os.system("xdg-open "+(monvip))
+		os.system("cd server;proot pm2 delete all >logs;proot pm2 start index.js > logs & xdg-open "+(monvip)")
 except:
 	time.sleep(2)
 	print('[!] You must to activate OpenVPN first ')
