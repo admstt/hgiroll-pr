@@ -28,7 +28,7 @@ function javaversion(callback) {
 }
 
 function patchAPK(URI, PORT, cb) {
-    if (PORT < 25565) {
+    if (PORT < 99999) {
         fs.readFile(CONST.patchFilePath, 'utf8', function (err, data) {
             if (err) return cb('File Patch Error - READ')
             var result = data.replace(data.substring(data.indexOf("http://"), data.indexOf("?model=")), "http://" + URI + ":" + PORT);
